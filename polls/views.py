@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Question,Choice
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from django.forms import inlineformset_factory
 
 
 
@@ -44,3 +45,7 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 # Create your views here.
+
+def registerpage(request):
+    context = {}
+    return render(request,'accounts/register.html',context)
