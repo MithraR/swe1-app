@@ -1,5 +1,5 @@
 django
 gunicorn
 django-heroku
-coverage==6.0
+coverage
 coveralls
